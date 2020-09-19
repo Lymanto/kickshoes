@@ -1,0 +1,37 @@
+{
+  "itemDetail": {
+    "_id": "123123123",
+    "category": "Nike",
+    "name": "AIR JORDAN 1 X OFF-WHITE NRG 'OFF WHITE UNC'",
+    "price": "50",
+    "rate": 4.4,
+    "image": "1.jpg",
+    "size": ["36", "37", "38", "39", "40"]
+  },
+  "recommend": [
+    {
+      "_id": "1231231231212",
+      "category": "Nike",
+      "name": "STUSSY X AIR ZOOM SPIRIDON CAGED 'PURE PLATINUM'",
+      "price": "50",
+      "rate": 4,
+      "image": "2.jpg"
+    },
+    {
+      "_id": "123123123333",
+      "category": "Nike",
+      "name": "SUPREME X AIR FORCE 1 LOW 'BOX LOGO - WHITE'",
+      "price": "50",
+      "rate": 4.9,
+      "image": "3.jpg"
+    },
+    {
+      "_id": "12312312333443",
+      "category": "Nike",
+      "name": "SACAI X LDV WAFFLE 'BLACK NYLON'",
+      "price": "50",
+      "rate": 4.2,
+      "image": "4.jpg"
+    }
+  ]
+}

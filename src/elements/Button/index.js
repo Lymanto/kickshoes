@@ -12,8 +12,13 @@ export default function Button(props) {
   if (props.isBlock) className.push("btn-block");
   if (props.hasShadow) className.push("btn-shadow");
 
-  const onClick = () => {
-    if (props.onClick) props.onClick();
+  const onClick = (event) => {
+    const target = {
+      target: {
+        value: event.target.value,
+      },
+    };
+    if (props.onClick) props.onClick(target);
   };
 
   if (props.isDisabled || props.isLoading) {
@@ -39,7 +44,8 @@ export default function Button(props) {
           className={className.join(" ")}
           style={props.style}
           target={props.target === "_blank" ? "_blank" : undefined}
-          rel={props.target === "_blank" ? "noopener noreferrer" : undefined}>
+          rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
+        >
           {props.children}
         </a>
       );
@@ -49,7 +55,8 @@ export default function Button(props) {
           to={props.href}
           className={className.join(" ")}
           style={props.style}
-          onClick={onClick}>
+          onClick={onClick}
+        >
           {props.children}
         </Link>
       );
@@ -59,7 +66,9 @@ export default function Button(props) {
     <button
       className={className.join(" ")}
       style={props.style}
-      onClick={onClick}>
+      onClick={onClick}
+      value={props.value}
+    >
       {props.children}
     </button>
   );
@@ -69,6 +78,7 @@ Button.prototype = {
   type: propTypes.oneOf(["button", "link"]),
   onClick: propTypes.func,
   href: propTypes.string,
+  value: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
   isPrimary: propTypes.bool,

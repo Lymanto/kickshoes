@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -44,7 +45,6 @@
 @import "print";
 
 html {
-  font-family: "Lato", sans-serif;
   background-color: #f2f2f2;
 }
 
@@ -83,5 +83,65 @@ header {
   width: 100%;
   .navbar {
     height: 80px;
+  }
+}
+footer {
+  .copyright {
+    height: 60px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #beb9b9;
+  }
+}
+.btn-circle {
+  background-color: #fff;
+  font-size: 1rem;
+  line-height: 19px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  margin-right: 20px;
+  &.active {
+    background-color: $indigo;
+    font-weight: bold;
+    color: #fff;
+  }
+}
+.card {
+  border: none;
+  background: #ffffff;
+  box-shadow: 3px 4px 4px rgba(132, 149, 158, 0.25);
+  border-radius: 10px;
+  height: 350px;
+  position: relative;
+  .card-title {
+    color: $primary;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+  }
+  .card-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    &:hover {
+      color: $red;
+      text-decoration: none;
+    }
+  }
+  .card-price {
+    color: $red;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+  }
+  .star-position {
+    position: absolute;
+    bottom: 15px;
   }
 }

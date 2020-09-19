@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-
+import Header from "parts/Header";
+import ItemDetail from "parts/ItemDetail";
+import DetailPage from "json/DetailPage.json";
 export default class ItemDetails extends Component {
   render() {
     return (
-      <div>
-        <h1>Item Details</h1>
-      </div>
+      <>
+        <Header />
+        <ItemDetail data={DetailPage} />
+      </>
     );
   }
 }
