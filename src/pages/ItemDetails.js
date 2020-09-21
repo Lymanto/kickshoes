@@ -50,7 +50,7 @@ class ItemDetails extends Component {
     //   data.push(JSON.stringify([this.state]));
     // }
     // localStorage.setItem("data", data);
-    window.location = "/cart";
+    window.location.href = "/cart";
   };
   componentDidMount() {
     window.title = "Detail Page";
