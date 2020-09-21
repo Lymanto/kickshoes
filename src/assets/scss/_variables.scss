@@ -147,7 +147,7 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white !default;
+$body-bg: #f2f2f2 !default;
 $body-color: $gray-900 !default;
 
 // Links
@@ -1060,7 +1060,7 @@ $breadcrumb-margin-bottom: 1rem !default;
 
 $breadcrumb-bg: $gray-200 !default;
 $breadcrumb-divider-color: $gray-600 !default;
-$breadcrumb-active-color: $gray-600 !default;
+$breadcrumb-active-color: $primary !default;
 $breadcrumb-divider: quote("/") !default;
 
 $breadcrumb-border-radius: $border-radius !default;

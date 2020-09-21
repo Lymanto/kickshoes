@@ -2,10 +2,11 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import Button from "elements/Button";
 import CartIcon from "assets/images/cart.svg";
-export default function Header() {
+export default function Header(props) {
+  const { data } = props;
   return (
-    <Fade>
-      <header className="spacing-sm">
+    <header className="spacing-sm">
+      <Fade delay={1}>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <Button className="brand-icon mx-auto" href="/" type="link">
@@ -13,13 +14,15 @@ export default function Header() {
             </Button>
             <Button className="cart-icon" href="/cart" type="link">
               <img src={CartIcon} alt="Cart Icon" />
-              {/* <span className="badge badge-pill badge-danger cart-badge">
-                1
-              </span> */}
+              {data.cart && (
+                <span className="badge badge-pill badge-danger cart-badge">
+                  {data.cart.length ? data.cart.length : ""}
+                </span>
+              )}
             </Button>
           </nav>
         </div>
-      </header>
-    </Fade>
+      </Fade>
+    </header>
   );
 }

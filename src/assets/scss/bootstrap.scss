@@ -44,10 +44,10 @@
 @import "utilities";
 @import "print";
 
-html {
-  background-color: #f2f2f2;
+header,
+footer {
+  background-color: #fff;
 }
-
 .brand-icon {
   font-size: 1.75em;
   font-weight: 400;
@@ -132,16 +132,70 @@ footer {
       text-decoration: none;
     }
   }
-  .card-price {
-    color: $red;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 19px;
-    letter-spacing: 0.05em;
-  }
+
   .star-position {
     position: absolute;
     bottom: 15px;
+  }
+}
+.price {
+  color: $red;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+}
+.item-name {
+  font-size: 1.375rem;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  max-width: 400px;
+}
+.size {
+  border: 2px solid $primary;
+  padding: 15px;
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.btn-cart {
+  background-color: $blue;
+  border: none;
+  padding: 5px 30px;
+  box-sizing: border-box;
+  width: 200px;
+  font-size: 18px;
+  &:hover {
+    background-color: #1838c7;
+  }
+}
+
+.recommend-title {
+  font-size: 20px;
+  color: $primary;
+  line-height: 26px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.cart {
+  border-radius: 20px;
+  box-shadow: 1px 3px 10px rgba(21, 44, 91, 0.25);
+  padding: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  .cart-name {
+    max-width: 250px;
+    margin-bottom: 0;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .cart-size-label {
+    font-size: 12;
+    color: #a0adb1;
+    font-weight: 600;
   }
 }

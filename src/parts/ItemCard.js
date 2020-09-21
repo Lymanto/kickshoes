@@ -8,7 +8,7 @@ export default function ItemCard(props) {
   const [searchResult, setSearchResult] = useState([]);
   useEffect(() => {
     let filter = data.item.filter((list) => {
-      return data.categorySearch === list.category;
+      return data.categorySearch === list.categoryId.name;
       // return list.name.toLowerCase().includes(data.search.toLowerCase());
     });
     setSearchResult(filter);
@@ -46,7 +46,8 @@ export default function ItemCard(props) {
                         alt=""
                       />
                       <div className="card-body d-flex flex-column">
-                        <h5 className="card-title">{item.category}</h5>
+                        <h5 className="card-title">{item.categoryId.name}</h5>
+
                         <Button
                           type="link"
                           href={`/item/${item._id}`}
@@ -55,9 +56,7 @@ export default function ItemCard(props) {
                           {item.name}
                         </Button>
                         <div className="star-position d-flex flex-column">
-                          <span className="card-price mb-2">
-                            $ {item.price}
-                          </span>
+                          <span className="price mb-2">$ {item.price}</span>
                           <Star
                             value={item.rate}
                             width={35}
