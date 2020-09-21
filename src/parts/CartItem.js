@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import Button from "elements/Button";
 export default function CartItem(props) {
   const { data } = props;
   //   const [deleteCart, setDeleteCart] = useState();
-  const [list, setList] = useState();
-  useEffect(() => {
-    setList(data.cart);
-  });
+  const [list, setList] = useState(data.cart);
+
   if (!list) return null;
   return (
     <div className="row">
@@ -44,7 +42,7 @@ export default function CartItem(props) {
                     value={index}
                     onClick={(ev) => {
                       list.splice(ev.target.value, 1);
-
+                      setList(data.cart);
                       localStorage.setItem("data", JSON.stringify(list));
                       window.location.reload();
                     }}
