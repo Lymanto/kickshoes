@@ -44,7 +44,7 @@ export default function CartItem(props) {
                       list.splice(ev.target.value, 1);
                       setList(data.cart);
                       localStorage.setItem("data", JSON.stringify(list));
-                      window.location.reload();
+                      window.location.reload(false);
                     }}
                   >
                     <FontAwesomeIcon icon={faTrash} />
