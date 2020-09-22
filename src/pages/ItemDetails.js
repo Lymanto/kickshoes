@@ -16,7 +16,6 @@ class ItemDetails extends Component {
     price: null,
     rate: null,
     image: null,
-    cart: JSON.parse(localStorage.getItem("data")),
   };
   onClickSize = (ev) => {
     this.setState({

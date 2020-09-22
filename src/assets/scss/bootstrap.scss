@@ -182,7 +182,8 @@ footer {
 }
 .cart {
   border-radius: 20px;
-  box-shadow: 1px 3px 10px rgba(21, 44, 91, 0.25);
+  border: 1px solid #e5e5e5;
+
   padding: 20px;
   margin-bottom: 20px;
   align-items: center;
@@ -197,5 +198,28 @@ footer {
     font-size: 12;
     color: #a0adb1;
     font-weight: 600;
+  }
+}
+.cart-detail-price {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 20px 30px;
+  .cart-detail-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $primary;
+    line-height: 30px;
+  }
+  .cart-detail-content {
+    font-size: 14px;
+    font-weight: 400;
+    color: $primary;
+    .cart-total {
+      border-top: 1px solid $abu;
+      padding-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
 }

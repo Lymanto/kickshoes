@@ -6,6 +6,8 @@ import Footer from "parts/Footer";
 import ItemCard from "parts/ItemCard";
 import { connect } from "react-redux";
 import { fetchHome } from "store/actions/home";
+import Lottie from "react-lottie";
+import Loading from "assets/json/loading-skeleton";
 class HomePage extends Component {
   state = {
     search: "",
@@ -30,8 +32,6 @@ class HomePage extends Component {
   }
   render() {
     const { home } = this.props;
-    if (!home.hasOwnProperty("homePage")) return null;
-
     const search = this.state.search;
     const categorySearch = this.state.categorySearch;
     const dataHomePage = {
@@ -39,6 +39,58 @@ class HomePage extends Component {
       categorySearch,
       ...home.homePage,
     };
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: Loading,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+    if (!home.hasOwnProperty("homePage"))
+      return (
+        <>
+          <Header data={this.state} />
+          <section className="container py-5">
+            <div className="row">
+              <div className="col-3">
+                <div
+                  className="card w-100 p-3"
+                  style={{ backgroundColor: `#fff` }}
+                >
+                  <Lottie options={defaultOptions} />
+                </div>
+              </div>
+              <div className="col-3">
+                <div
+                  className="card w-100 p-3"
+                  style={{ backgroundColor: `#fff` }}
+                >
+                  <Lottie options={defaultOptions} />
+                </div>
+              </div>
+              <div className="col-3">
+                <div
+                  className="card w-100 p-3"
+                  style={{ backgroundColor: `#fff` }}
+                >
+                  <Lottie options={defaultOptions} />
+                </div>
+              </div>
+              <div className="col-3">
+                <div
+                  className="card w-100 p-3"
+                  style={{ backgroundColor: `#fff` }}
+                >
+                  <Lottie options={defaultOptions} />
+                </div>
+              </div>
+            </div>
+          </section>
+          <Footer />
+        </>
+      );
+
     return (
       <>
         <Header data={this.state} />
