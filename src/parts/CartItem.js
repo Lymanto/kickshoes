@@ -5,18 +5,18 @@ import Button from "elements/Button";
 export default function CartItem(props) {
   const { data } = props;
   //   const [deleteCart, setDeleteCart] = useState();
-  const [list, setList] = useState(data.cart);
+  // const [list, setList] = useState(data.cart);
 
-  if (!list) return null;
+  if (!data.cart) return null;
   return (
     <div className="row">
       <div className="col-6 d-flex flex-column" style={{ marginLeft: 16 }}>
         <p>
-          You have {list.length} {list.length > 1 ? "items" : "item"} in your
-          cart
+          You have {data.cart.length} {data.cart.length > 1 ? "items" : "item"}{" "}
+          in your cart
         </p>
         <div className="d-flex flex-column">
-          {list.map((item, index) => {
+          {data.cart.map((item, index) => {
             return (
               <div
                 className="cart d-flex flex-row justify-content-between"
@@ -40,12 +40,7 @@ export default function CartItem(props) {
                   <Button
                     className="btn btn-danger"
                     value={index}
-                    onClick={(ev) => {
-                      list.splice(ev.target.value, 1);
-                      setList(data.cart);
-                      localStorage.setItem("data", JSON.stringify(list));
-                      window.location.reload(false);
-                    }}
+                    onClick={props.onClick}
                   >
                     <FontAwesomeIcon icon={faTrash} />
                   </Button>

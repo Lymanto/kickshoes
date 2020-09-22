@@ -5,6 +5,9 @@ import CartItem from "parts/CartItem";
 import Fade from "react-reveal/Fade";
 import Breadcrumb from "elements/Breadcrumb";
 export default class CartPage extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
   state = {
     cart: JSON.parse(localStorage.getItem("data")),
   };
@@ -16,6 +19,12 @@ export default class CartPage extends Component {
   // }
   //   this.setState({ cart: );
   // }
+  onRemoveCart = (ev) => {
+    this.state.cart.splice(ev.target.value, 1);
+    // this.setState(data.cart);
+    localStorage.setItem("data", JSON.stringify(this.state.cart));
+    this.props.history.push("/cart");
+  };
   render() {
     const breadcrumb = [
       { pageTitle: "Home", pageHref: "" },
@@ -38,7 +47,7 @@ export default class CartPage extends Component {
           <Fade>
             <Breadcrumb data={breadcrumb} />
           </Fade>
-          <CartItem data={this.state} />
+          <CartItem data={this.state} onClick={this.onRemoveCart} />
         </section>
         <Footer />
       </>
