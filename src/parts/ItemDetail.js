@@ -5,7 +5,6 @@ import Fade from "react-reveal/Fade";
 
 export default function ItemDetail(props) {
   const { data } = props;
-  console.log(data);
   return (
     <div className="row" style={{ padding: `0px 16px 50px ` }}>
       <div className="col-6 text-center">

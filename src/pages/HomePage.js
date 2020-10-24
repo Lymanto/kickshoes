@@ -14,6 +14,7 @@ class HomePage extends Component {
     categorySearch: "all",
     cart: JSON.parse(localStorage.getItem("data")),
   };
+
   constructor(props) {
     super(props);
     this.refMostPicked = React.createRef();
@@ -31,6 +32,7 @@ class HomePage extends Component {
       this.props.fetchHome(`/home-page`, "homePage");
   }
   render() {
+    localStorage.setItem("finish", false);
     const { home } = this.props;
     const search = this.state.search;
     const categorySearch = this.state.categorySearch;

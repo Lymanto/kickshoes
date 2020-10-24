@@ -49,6 +49,7 @@ export default function MyCheckoutForm(props) {
       } else {
         setError(null);
         localStorage.clear("data");
+        localStorage.setItem("finish", true);
         history.push("/finish");
         // Send the token to your server.
       }

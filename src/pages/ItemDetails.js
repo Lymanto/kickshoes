@@ -9,6 +9,8 @@ import Fade from "react-reveal/Fade";
 import { connect } from "react-redux";
 import { fetchHome } from "store/actions/home";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 class ItemDetails extends Component {
   state = {
     size: null,
@@ -28,28 +30,35 @@ class ItemDetails extends Component {
     });
   };
   onClickCart = () => {
-    const oldproduct = localStorage.getItem("data")
-      ? localStorage.getItem("data")
-      : "[]";
-    const arrayproduct = JSON.parse(oldproduct);
-    // let productsString = data.products;
-    let products = this.state;
+    if (this.state.size === null) {
+      toast.error("Choose the size", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2500,
+      });
+    } else {
+      const oldproduct = localStorage.getItem("data")
+        ? localStorage.getItem("data")
+        : "[]";
+      const arrayproduct = JSON.parse(oldproduct);
+      // let productsString = data.products;
+      let products = this.state;
 
-    arrayproduct.push(products);
-    // if (productsString) {
-    // products = JSON.parse(productsString);
-    // }
+      arrayproduct.push(products);
+      // if (productsString) {
+      // products = JSON.parse(productsString);
+      // }
 
-    localStorage.setItem("data", JSON.stringify(arrayproduct));
-    // let data = [];
-    // if (!localStorage.getItem("data")) {
-    //   data.push(JSON.stringify([this.state]));
-    // } else {
-    //   data = [localStorage.getItem("data")];
-    //   data.push(JSON.stringify([this.state]));
-    // }
-    // localStorage.setItem("data", data);
-    this.props.history.push("/cart");
+      localStorage.setItem("data", JSON.stringify(arrayproduct));
+      // let data = [];
+      // if (!localStorage.getItem("data")) {
+      //   data.push(JSON.stringify([this.state]));
+      // } else {
+      //   data = [localStorage.getItem("data")];
+      //   data.push(JSON.stringify([this.state]));
+      // }
+      // localStorage.setItem("data", data);
+      this.props.history.push("/cart");
+    }
   };
   componentDidMount() {
     window.title = "Detail Page";
