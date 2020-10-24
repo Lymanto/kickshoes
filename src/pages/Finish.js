@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
 import FinishDetail from "parts/FinishDetail";
-import Fade from "react-reveal/Fade";
 export default class Finish extends Component {
   state = {
     cart: JSON.parse(localStorage.getItem("data")),
