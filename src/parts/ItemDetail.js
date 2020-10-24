@@ -7,7 +7,7 @@ export default function ItemDetail(props) {
   const { data } = props;
   console.log(data);
   return (
-    <div class="row" style={{ padding: `0px 16px 50px ` }}>
+    <div className="row" style={{ padding: `0px 16px 50px ` }}>
       <div className="col-6 text-center">
         <Fade left>
           <img
@@ -28,7 +28,7 @@ export default function ItemDetail(props) {
             <span className="price mb-2" style={{ fontSize: "20px" }}>
               $ {data.item.price}
             </span>
-            <div class="d-flex flex-row mt-3">
+            <div className="d-flex flex-row mt-3">
               {data.item.size.map((item, index) => {
                 return (
                   <Button

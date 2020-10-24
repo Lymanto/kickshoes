@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Header from "parts/Header";
 import Footer from "parts/Footer";
-import PaymentDetail from "parts/PaymentDetail";
+import FinishDetail from "parts/FinishDetail";
 
-export default class Payment extends Component {
+export default class Finish extends Component {
   state = {
     cart: JSON.parse(localStorage.getItem("data")),
   };
@@ -12,7 +12,7 @@ export default class Payment extends Component {
       <>
         <Header data={this.state} />
 
-        <PaymentDetail data={this.state} />
+        <FinishDetail data={this.state} />
         <Footer />
       </>
     );

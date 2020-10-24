@@ -4,7 +4,6 @@ import InputText from "elements/Form/InputText";
 import Fade from "react-reveal/Fade";
 export default function ButtonCategories(props) {
   const { data } = props;
-  console.log(data);
   return (
     <Fade>
       <div style={{ backgroundColor: "#f2f2f2", width: "100%" }}>

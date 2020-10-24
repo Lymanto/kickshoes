@@ -79,9 +79,13 @@ class ItemDetails extends Component {
         pageHref: "",
       },
     ];
+    const badge = {
+      cart: JSON.parse(localStorage.getItem("data")),
+    };
+
     return (
       <>
-        <Header data={this.state} />
+        <Header data={badge} />
         <section
           className="container"
           style={{

@@ -72,7 +72,9 @@ export default function Text(props) {
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
-            <span className="input-group-text">{prepend}</span>
+            <span className="input-group-text bg-transparent">
+              <FontAwesomeIcon icon={prepend} color={["#9ca0a8"]} />
+            </span>
           </div>
         )}
         <input
@@ -105,8 +107,8 @@ Text.propTypes = {
   name: propTypes.string.isRequired,
   value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
   onChange: propTypes.func.isRequired,
-  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
-  append: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
+  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
   type: propTypes.string,
   placeholder: propTypes.string,
   outerClassName: propTypes.string,

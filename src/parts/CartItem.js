@@ -4,6 +4,10 @@ import { faTrash, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Button from "elements/Button";
 import Lottie from "react-lottie";
 import EmptyCart from "assets/json/empty-box";
+
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import MyCheckoutForm from "./MyCheckoutForm";
 export default function CartItem(props) {
   const { data } = props;
   //   const [deleteCart, setDeleteCart] = useState();
@@ -16,7 +20,6 @@ export default function CartItem(props) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  console.log(data);
   if (data.cart === null || data.cart.length < 1) {
     return (
       <div className="row">
@@ -36,6 +39,9 @@ export default function CartItem(props) {
       total += data.cart[i].price;
     }
   }
+  const stripePromise = loadStripe(
+    "pk_test_51HMQ46LdIqngB9A0YNyc3URjqbRPjL4FDc7f4XJdasuSnKFJByy7x9Q1obz5hym9SnfC7ZP3QsOyqeTOxKxt1RoE00dWRQhbT8"
+  );
   return (
     <div className="row">
       <div className="col-12 d-flex flex-column" style={{ paddingLeft: 26 }}>
@@ -49,7 +55,7 @@ export default function CartItem(props) {
           </p>
         </div>
         <div className="row">
-          <div className="col-6">
+          <div className="col-7">
             <div className="d-flex flex-column">
               {data.cart.map((item, index) => {
                 return (
@@ -68,7 +74,7 @@ export default function CartItem(props) {
                       <div className="ml-3">
                         <p className="cart-name">{item.name}</p>
                         <p className="cart-size-label mb-0">Size {item.size}</p>
-                        <p class="price">$ {item.price}</p>
+                        <p className="price">$ {item.price}</p>
                       </div>
                     </div>
                     <div>
@@ -85,7 +91,7 @@ export default function CartItem(props) {
               })}
             </div>
           </div>
-          <div className="col-6 px-5">
+          <div className="col-5 px-3">
             <div className="cart-detail-price">
               <div className="cart-detail-title mb-2">Shopping Details</div>
               <div className="cart-detail-content">
@@ -104,11 +110,12 @@ export default function CartItem(props) {
                   <div style={{ color: `#1ABC9C` }}>$ {total}</div>
                 </div>
               </div>
-              <div className="text-center mt-5">
-                <Button className="btn" type="link" href="/payment" isPrimary>
-                  Continue to Checkout
-                </Button>
-              </div>
+            </div>
+            <div className="cart-detail-price mt-3">
+              <div className="cart-detail-title mb-2">Payment Details</div>
+              <Elements stripe={stripePromise}>
+                <MyCheckoutForm data={total} />
+              </Elements>
             </div>
           </div>
         </div>
