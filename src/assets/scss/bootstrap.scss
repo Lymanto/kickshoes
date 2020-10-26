@@ -100,6 +100,7 @@ footer {
   padding: 12px 30px;
   border-radius: 30px;
   margin-right: 20px;
+  white-space: nowrap;
   &.active {
     background-color: $indigo;
     font-weight: bold;
@@ -243,4 +244,22 @@ footer {
   font-style: normal;
   max-width: 396px;
   margin: auto;
+}
+
+.container-categories {
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 380px;
+  }
+  footer {
+    .copyright {
+      font-size: 14px;
+    }
+  }
 }

@@ -32,7 +32,7 @@ export default function ItemCard(props) {
           <div className="row">
             {searchResult.map((item, index) => {
               return (
-                <Fade bottom delay={300 * index}>
+                <Fade bottom delay={200 * index}>
                   <div
                     className="col-md-3 col-sm-6"
                     style={{ paddingTop: `30px` }}
@@ -49,8 +49,8 @@ export default function ItemCard(props) {
                         <h5 className="card-title">{item.categoryId.name}</h5>
 
                         <Button
-                          type="link"
                           href={`/item/${item._id}`}
+                          type="link"
                           className="card-text"
                         >
                           {item.name}

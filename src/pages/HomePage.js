@@ -55,7 +55,10 @@ class HomePage extends Component {
           <Header data={this.state} />
           <section className="container py-5">
             <div className="row">
-              <div className="col-3">
+              <div
+                className="col-md-3 col-sm-12"
+                style={{ paddingBottom: `30px` }}
+              >
                 <div
                   className="card w-100 p-3"
                   style={{ backgroundColor: `#fff` }}
@@ -63,7 +66,10 @@ class HomePage extends Component {
                   <Lottie options={defaultOptions} />
                 </div>
               </div>
-              <div className="col-3">
+              <div
+                className="col-md-3 col-sm-12"
+                style={{ paddingBottom: `30px` }}
+              >
                 <div
                   className="card w-100 p-3"
                   style={{ backgroundColor: `#fff` }}
@@ -71,7 +77,10 @@ class HomePage extends Component {
                   <Lottie options={defaultOptions} />
                 </div>
               </div>
-              <div className="col-3">
+              <div
+                className="col-md-3 col-sm-12"
+                style={{ paddingBottom: `30px` }}
+              >
                 <div
                   className="card w-100 p-3"
                   style={{ backgroundColor: `#fff` }}
@@ -79,7 +88,10 @@ class HomePage extends Component {
                   <Lottie options={defaultOptions} />
                 </div>
               </div>
-              <div className="col-3">
+              <div
+                className="col-md-3 col-sm-12"
+                style={{ paddingBottom: `30px` }}
+              >
                 <div
                   className="card w-100 p-3"
                   style={{ backgroundColor: `#fff` }}

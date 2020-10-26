@@ -33,9 +33,10 @@ export default function Recommend(props) {
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{item.categoryId.name}</h5>
                     <Button
-                      href={`/item/${item._id}`}
                       type="link"
+                      href={`/item/${item._id}`}
                       className="card-text"
+                      isExternal
                     >
                       {item.name}
                     </Button>

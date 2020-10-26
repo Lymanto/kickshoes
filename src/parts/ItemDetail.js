@@ -7,17 +7,20 @@ export default function ItemDetail(props) {
   const { data } = props;
   return (
     <div className="row" style={{ padding: `0px 16px 50px ` }}>
-      <div className="col-6 text-center">
-        <Fade left>
+      <Fade left>
+        <div className="col-md-6 col-sm-12 text-center">
           <img
             width="80%"
             src={`${process.env.PUBLIC_URL}/images/product/${data.item.image}`}
             alt=""
           />
-        </Fade>
-      </div>
+        </div>
+      </Fade>
       <Fade right>
-        <div className="col-6" style={{ paddingLeft: 50, paddingRight: 50 }}>
+        <div
+          className="col-md-6 col-sm-12 px-md-5"
+          style={{ marginTop: `20px` }}
+        >
           <div className="d-flex flex-row">
             <Star value={data.item.rate} width={35} height={35} spacing={4} />
             <span className="align-self-center">({data.item.rate})</span>
@@ -27,11 +30,11 @@ export default function ItemDetail(props) {
             <span className="price mb-2" style={{ fontSize: "20px" }}>
               $ {data.item.price}
             </span>
-            <div className="d-flex flex-row mt-3">
+            <div className="d-flex flex-row flex-wrap mt-3">
               {data.item.size.map((item, index) => {
                 return (
                   <Button
-                    className={`btn btn-circle size ${
+                    className={`btn btn-circle size my-1 ${
                       item === data.size ? "active" : ""
                     }`}
                     key={index}

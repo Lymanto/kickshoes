@@ -78,6 +78,19 @@ export default function FinishDetail(props) {
       </div>
     );
   }
+  if (data.cart.length === 0 && status === "false") {
+    return (
+      <div className="row">
+        <div className="col-12 text-center">
+          <Lottie options={defaultOptions} height={300} width={300} />
+          <h1 className="h5 text-center">Your cart is empty!</h1>
+          <Button className="btn mt-3 mb-4" type="link" href="/" isPrimary>
+            Back to home page
+          </Button>
+        </div>
+      </div>
+    );
+  }
   if (data.cart.length >= 1 && status === "false") {
     return (
       <div className="row">

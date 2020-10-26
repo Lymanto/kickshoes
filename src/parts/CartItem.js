@@ -55,7 +55,7 @@ export default function CartItem(props) {
           </p>
         </div>
         <div className="row">
-          <div className="col-7">
+          <div className="col-md-7 col-sm-12">
             <div className="d-flex flex-column">
               {data.cart.map((item, index) => {
                 return (
@@ -91,7 +91,7 @@ export default function CartItem(props) {
               })}
             </div>
           </div>
-          <div className="col-5 px-3">
+          <div className="col-md-5 col-sm-12 px-3">
             <div className="cart-detail-price">
               <div className="cart-detail-title mb-2">Shopping Details</div>
               <div className="cart-detail-content">
